@@ -2,6 +2,12 @@
 
 <%= render @place %>
 
+<div data-controller="map" data-map-readonly-value="true">
+  <div data-map-target="container" style="min-height: 300px"></div>
+  <input type="hidden" data-map-target="latitude" value="<%= @place.latitude %>">
+  <input type="hidden" data-map-target="longitude" value="<%= @place.longitude %>">
+</div>
+
 <div>
   <%= link_to "Edit this place", edit_place_path(@place) %> |
   <%= link_to "Back to places", places_path %>
